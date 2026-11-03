@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Redirecting...</title>
+  <script>
+    // Clear any previously locked condition from the old code
+    localStorage.removeItem("assigned_8cond_form");
+
+    const urls = [
+      "https://docs.google.com/forms/d/e/1FAIpQLSdH5uSrwGX1_oSHH1xdVwjid7456SaR2KuNLwct6MxxSxV2AA/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLScqhI0Vl3jjcjlxK3c7VpwFpzfzFpK0ZYGdx-qB5v2gQgAZgw/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdTRyjvGAlOi8YmhBQeCSU-bkpAAL1DbKlOiE-ZbDZ3QgQMoA/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLSdzQmaskmjgVX6Mxl64gka-2WJjJwsGzybVIVB1DPGwQGo64g/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLScCFMTKZ1Gl-zpGtr5KvYWReWbaxPtBhw4T4CIefuI6v8nLtw/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLSfe4tvc8GErQjzMUVhe6VhL-8HHGRXaOAOh62kCJSr5P4_p3g/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLSe7Yt8Xz4z2JpxfOQzx4Kj9f8TuppHev51eAqOBFX4Uhb5BRg/viewform",
+      "https://docs.google.com/forms/d/e/1FAIpQLSd3zx6R5rdwQHSb0s4dPV01Qmmf2cMeryoxFfcFUO9PW34xsw/viewform"
+    ];
+
+    // Cryptographically strong random index (0 to 7) on every single load
+    const randomBuffer = new Uint32Array(1);
+    window.crypto.getRandomValues(randomBuffer);
+    const randomIndex = randomBuffer[0] % urls.length;
+
+    window.location.replace(urls[randomIndex]);
+  </script>
+</head>
+<body></body>
+</html>
